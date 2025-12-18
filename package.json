@@ -1,8 +1,25 @@
 {
-  "type": "module",
+  "name": "node-red-contrib-adsb-decoder",
+  "version": "0.1.0",
+  "description": "Node-RED node to decode ADS-B messages into structured objects",
+  "keywords": [
+    "node-red",
+    "node-red-contrib",
+    "ads-b",
+    "adsb",
+    "decoder"
+  ],
+  "license": "MIT",
+  "main": "adsb-decoder.js",
   "scripts": {
-    "build": "esbuild src/index.js --bundle --platform=node --outfile=dist/index.js",
-    "test": "jest",
-    "prepublishOnly": "npm run build"
+    "test": "echo \"No tests specified\""
+  },
+  "dependencies": {
+    "ads-b": "^0.2.0"
+  },
+  "node-red": {
+    "nodes": {
+      "adsb-decoder": "adsb-decoder.js"
+    }
   }
 }

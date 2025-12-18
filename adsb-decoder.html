@@ -1,0 +1,45 @@
+<script type="text/html" data-template-name="adsb-decoder">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="ADS-B decoder">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="adsb-decoder">
+  <p>
+    Decodes ADS-B (Automatic Dependent Surveillance–Broadcast) messages from a hex
+    string into a structured JavaScript object.
+  </p>
+
+  <h3>Inputs</h3>
+  <dl class="message-properties">
+    <dt>payload <span class="property-type">string</span></dt>
+    <dd>
+      ADS-B message as a hex string, for example:
+      <code>8D4840D6202CC371C32CE0576098</code>.
+    </dd>
+  </dl>
+
+  <h3>Outputs</h3>
+  <dl class="message-properties">
+    <dt>payload <span class="property-type">object</span></dt>
+    <dd>
+      The decoded ADS-B message returned by the underlying decoder library.
+    </dd>
+
+    <dt>adsb <span class="property-type">object</span></dt>
+    <dd>
+      Convenience copy of the decoded ADS-B object.
+    </dd>
+  </dl>
+
+  <h3>Details</h3>
+  <p>
+    This node uses the <code>ads-b</code> npm package internally. It supports the
+    subset of ADS-B message types implemented by that library.
+  </p>
+  <p>
+    If the payload is empty or cannot be decoded, the node will log a warning or
+    error to the Node-RED debug sidebar.
+  </p>
+</script>
